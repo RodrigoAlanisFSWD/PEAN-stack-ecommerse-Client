@@ -1,0 +1,259 @@
+.hero {
+    height: 500px;
+    background-image: url('../../../assets/her.png');
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .hero__navbar {
+        background-color: white;
+        height: 70px;
+        width: 80%;
+        margin-top: 20px;
+        border-radius: 1px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-items: center;
+        align-items: center;
+
+        .hero__navbar-title {
+            font-size: 28px;
+            font-weight: 300;
+            transition: all 300ms;
+        } 
+
+        .hero__navbar-title:hover {
+            letter-spacing: 2px;
+            transform: scale(1.2,1.2);
+        }
+
+        .hero__navbar-list {
+            grid-column: 2 / 4;
+            display: flex;
+            justify-content: space-evenly;
+            width: 90%;
+
+            .hero__navbar-item {
+                list-style: none;
+                transition: transform 300ms;
+                .hero__navbar-link {
+                    color: black;
+                    text-decoration: none;
+                    font-size: 18px;
+                }
+            }
+
+            .hero__navbar-item:hover {
+                transform: scale(1.3,1.3);
+            }
+        }
+
+        .hero__navbar-btn {
+            padding: 10px;
+            width: 80%;
+            border: 2px solid #555;
+            background-color: #555;
+            color: white;
+            border-radius: 2px;
+            font-size: 18px;
+            transition: all 300ms;
+        }
+
+        .hero__navbar-btn:hover {
+            background-color: white;
+            color: #333;
+        }
+    }
+
+    .hero__title {
+        height: 80%;
+    }
+
+    .hero__title path:nth-child(2) {
+        stroke-dasharray: 479;
+        stroke-dashoffset: 479;
+        animation: stroke 2s ease forwards;
+    }
+    .hero__title path:nth-child(3) {
+        stroke-dasharray: 350;
+        stroke-dashoffset: 350;
+        animation: stroke 2s ease forwards 0.3s;
+    }
+    .hero__title path:nth-child(4) {
+        stroke-dasharray: 250;
+        stroke-dashoffset: 250;
+        animation: stroke 2s ease forwards 0.6s;
+    }
+    .hero__title path:nth-child(5) {
+        stroke-dasharray: 750;
+        stroke-dashoffset: 750;
+        animation: stroke 2s ease forwards 0.9s;
+    }
+    .hero__title path:nth-child(6) {
+        stroke-dasharray: 834;
+        stroke-dashoffset: 834;
+        animation: stroke 2s ease forwards 1.2s;
+    }
+    .hero__title path:nth-child(7) {
+        stroke-dasharray: 375;
+        stroke-dashoffset: 375;
+        animation: stroke 2s ease forwards 1.5s;
+    }
+    .hero__title path:nth-child(8) {
+        stroke-dasharray: 275;
+        stroke-dashoffset: 275;
+        animation: stroke 2s ease forwards 1.8s;
+    }
+    .hero__title path:nth-child(9) {
+        stroke-dasharray: 475;
+        stroke-dashoffset: 475;
+        animation: stroke 2s ease forwards 2.1s;
+
+    }
+    .hero__title path:nth-child(10) {
+        stroke-dasharray: 650;
+        stroke-dashoffset: 650;
+        animation: stroke 2s ease forwards 2.4s;
+    }
+}
+
+@keyframes stroke {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+@media screen and (max-width: 845px) {
+    .hero {
+        height: 400px;
+        .hero__navbar {
+            height: 70px;
+            width: 90%;
+    
+            .hero__navbar-title {
+                font-size: 20px;
+            } 
+    
+            .hero__navbar-title:hover {
+                letter-spacing: 2px;
+                transform: scale(1.2,1.2);
+            }
+    
+            .hero__navbar-list {
+    
+                .hero__navbar-item {
+                    .hero__navbar-link {
+                        font-size: 16px;
+                        font-weight: 300;
+                    }
+                }
+            }
+    
+            .hero__navbar-btn {
+                font-size: 16px;
+                font-weight: 300;
+            }
+        }
+    
+        .hero__title {
+            height: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 667px) {
+    .hero {
+        height: 400px;
+        .hero__navbar {
+            height: 120px;
+            width: 90%;
+            grid-template-columns: repeat(2,1fr);
+            background-color: transparent;
+    
+            .hero__navbar-title {
+                font-size: 24px;
+                color: white;
+                grid-column: 1 / 3;
+                margin: 10px;
+            } 
+    
+            .hero__navbar-title:hover {
+                letter-spacing: 2px;
+                transform: scale(1.2,1.2);
+            }
+    
+            .hero__navbar-list {
+                grid-column: 1 / 2;
+                .hero__navbar-item {
+                    .hero__navbar-link {
+                        font-size: 16px;
+                        font-weight: 300;
+                        color: white;
+                    }
+                }
+            }
+    
+            .hero__navbar-btn {
+                font-size: 16px;
+                font-weight: 300;
+                padding: 8px;
+                width: 70%;
+            }
+        }
+    
+        .hero__title {
+            height: 60%;
+            width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 475px) {
+    .hero {
+        height: 350px;
+        .hero__navbar {
+            height: auto;
+            width: 90%;
+            grid-template-columns: 1fr;
+            background-color: transparent;
+    
+            .hero__navbar-title {
+                font-size: 24px;
+                color: white;
+                grid-column: 1 / 2;
+                margin: 10px;
+            } 
+    
+            .hero__navbar-title:hover {
+                letter-spacing: 2px;
+                transform: scale(1.2,1.2);
+            }
+    
+            .hero__navbar-list {
+                grid-column: 1 / 2;
+                margin-top: 20px;
+                .hero__navbar-item {
+                    .hero__navbar-link {
+                        font-size: 16px;
+                        font-weight: 300;
+                        color: white;
+                    }
+                }
+            }
+    
+            .hero__navbar-btn {
+                font-size: 16px;
+                font-weight: 300;
+                padding: 8px;
+                width: 80%;
+                margin-top: 15px;
+            }
+        }
+    
+        .hero__title {
+            height: 60%;
+            width: 70%;
+        }
+    }
+}
