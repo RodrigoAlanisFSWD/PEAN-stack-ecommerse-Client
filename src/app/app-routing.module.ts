@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-	{path: "",pathMatch: "full",component: HomeComponent}
+	{ path: "",pathMatch: "full",component: HomeComponent },
+	{ path: 'login', loadChildren: () => import('./core/modules/login/login.module').then(m => m.LoginModule) },
+	{ path: 'register', loadChildren: () => import('./core/modules/register/register.module').then(m => m.RegisterModule) },
 ];
 
 @NgModule({

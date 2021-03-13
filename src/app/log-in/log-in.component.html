@@ -1,0 +1,33 @@
+<form class="form" [formGroup]="form">
+    <h2 class="form__title">
+        LogIn Form
+    </h2>
+    <div class="form__group">
+        <input formControlName="email" type="email" placeholder="Enter Your Email" class="form__input">
+
+        <div class="form__alert" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+            The Email Is Required
+        </div>
+        <div class="form__alert" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+            The Email Is Invalid
+        </div>
+    </div>
+    <div class="form__group">
+        <input formControlName="password" type="password" placeholder="Enter Your Password" class="form__input">
+
+        <div class="form__alert" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+            The Password Is Required
+        </div>
+        <div class="form__alert" *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched">
+            The Password Is Invalid
+        </div>
+    </div>
+
+    <button class="form__btn" type="submit">
+        LogIn
+    </button>
+
+    <a routerLink="../register" class="form__link">
+        Or You Dont Have An Account ?
+    </a>
+</form>

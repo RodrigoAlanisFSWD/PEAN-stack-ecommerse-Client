@@ -1,0 +1,82 @@
+<form class="form" [formGroup]="form">
+  <h2 class="form__title">
+    Register Form
+  </h2>
+  <div class="form__group" id="one">
+    <input formControlName="name" type="text" placeholder="Enter Your Name" class="form__input">
+
+    <div class="form__alert" *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+      The Name Is Required
+    </div>
+
+    <input formControlName="username" type="text" placeholder="Enter Your Username" class="form__input">
+
+    <div class="form__alert" *ngIf="form.get('username')?.hasError('required') && form.get('username')?.touched">
+      The Username Is Required
+    </div>
+  </div>
+  <div class="form__group" id="two">
+    <input formControlName="email" type="password" placeholder="Enter Your Email" class="form__input">
+
+    <div class="form__alert" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+      The Email Is Required
+    </div>
+    <div class="form__alert" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+      The Email Is Invalid
+    </div>
+
+    <input formControlName="password" type="password" placeholder="Enter Your Password" class="form__input">
+
+    <div class="form__alert" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+      The Password Is Required
+    </div>
+    <div class="form__alert" *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched">
+      The Password Is Invalid
+    </div>
+  </div>
+  <!-- Wrap -->
+  <div class="form__wrap" style="display: none;">
+    <div class="form__group">
+      <input formControlName="name" type="text" placeholder="Enter Your Name" class="form__input">
+
+      <div class="form__alert" *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+        The Name Is Required
+      </div>
+    </div>
+    <div class="form__group">
+      <input formControlName="username" type="text" placeholder="Enter Your Username" class="form__input">
+
+      <div class="form__alert" *ngIf="form.get('username')?.hasError('required') && form.get('username')?.touched">
+        The Username Is Required
+      </div>
+    </div>
+    <div class="form__group">
+      <input formControlName="email" type="password" placeholder="Enter Your Email" class="form__input">
+
+      <div class="form__alert" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+        The Email Is Required
+      </div>
+      <div class="form__alert" *ngIf="form.get('email')?.hasError('email') && form.get('email')?.touched">
+        The Email Is Invalid
+      </div>
+    </div>
+    <div class="form__group">
+
+      <input formControlName="password" type="password" placeholder="Enter Your Password" class="form__input">
+
+      <div class="form__alert" *ngIf="form.get('password')?.hasError('required') && form.get('password')?.touched">
+        The Password Is Required
+      </div>
+      <div class="form__alert" *ngIf="form.get('password')?.hasError('minlength') && form.get('password')?.touched">
+        The Password Is Invalid
+      </div>
+    </div>
+
+
+  </div>
+
+  <button class="form__btn" type="submit">
+    Register
+  </button>
+
+</form>
