@@ -1,16 +1,20 @@
 <section class="hero">
     <nav class="hero__navbar">
-        <div class="hero__navbar-title">
+        <a routerLink="" class="hero__navbar-title">
             Ecommerse
-        </div>
+        </a>
         <ul class="hero__navbar-list">
-            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link">Home</a></li>
-            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link">Products</a></li>
-            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link">Account</a></li>
+            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Home</a></li>
+            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Products</a></li>
+            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Account</a></li>
         </ul>
-        <a routerLink="login" class="hero__navbar-btn">
+        <a *ngIf="!_auth.verifyToken()" routerLink="login" class="hero__navbar-btn">
             Login
         </a>
+
+        <button (click)="logout()" *ngIf="_auth.verifyToken()" class="hero__navbar-btn">
+          Logout
+        </button>
     </nav>
 
     <svg class="hero__title" width="624" height="79" viewBox="0 0 624 79" fill="none"

@@ -20,7 +20,9 @@
             font-size: 28px;
             font-weight: 300;
             transition: all 300ms;
-        } 
+            color: black;
+            text-decoration: none;
+        }
 
         .hero__navbar-title:hover {
             letter-spacing: 2px;
@@ -132,18 +134,18 @@
         .hero__navbar {
             height: 70px;
             width: 90%;
-    
+
             .hero__navbar-title {
                 font-size: 20px;
-            } 
-    
+            }
+
             .hero__navbar-title:hover {
                 letter-spacing: 2px;
                 transform: scale(1.2,1.2);
             }
-    
+
             .hero__navbar-list {
-    
+
                 .hero__navbar-item {
                     .hero__navbar-link {
                         font-size: 16px;
@@ -151,13 +153,13 @@
                     }
                 }
             }
-    
+
             .hero__navbar-btn {
                 font-size: 16px;
                 font-weight: 300;
             }
         }
-    
+
         .hero__title {
             height: 70%;
         }
@@ -170,21 +172,21 @@
         .hero__navbar {
             height: 120px;
             width: 90%;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(1,1fr);
             background-color: transparent;
-    
+
             .hero__navbar-title {
                 font-size: 24px;
                 color: white;
-                grid-column: 1 / 3;
                 margin: 10px;
-            } 
-    
+                margin-bottom: 20px;
+            }
+
             .hero__navbar-title:hover {
                 letter-spacing: 2px;
                 transform: scale(1.2,1.2);
             }
-    
+
             .hero__navbar-list {
                 grid-column: 1 / 2;
                 .hero__navbar-item {
@@ -195,15 +197,16 @@
                     }
                 }
             }
-    
+
             .hero__navbar-btn {
                 font-size: 16px;
                 font-weight: 300;
                 padding: 8px;
-                width: 70%;
+                width: 100%;
+                margin-top: 10px;
             }
         }
-    
+
         .hero__title {
             height: 60%;
             width: 60%;
@@ -219,19 +222,19 @@
             width: 90%;
             grid-template-columns: 1fr;
             background-color: transparent;
-    
+
             .hero__navbar-title {
                 font-size: 24px;
                 color: white;
                 grid-column: 1 / 2;
                 margin: 10px;
-            } 
-    
+            }
+
             .hero__navbar-title:hover {
                 letter-spacing: 2px;
                 transform: scale(1.2,1.2);
             }
-    
+
             .hero__navbar-list {
                 grid-column: 1 / 2;
                 margin-top: 20px;
@@ -243,7 +246,7 @@
                     }
                 }
             }
-    
+
             .hero__navbar-btn {
                 font-size: 16px;
                 font-weight: 300;
@@ -252,7 +255,7 @@
                 margin-top: 15px;
             }
         }
-    
+
         .hero__title {
             height: 60%;
             width: 70%;

@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="form">
+<form class="form" [formGroup]="form" (submit)="submit(form.value)">
   <h2 class="form__title">
     Register Form
   </h2>
@@ -16,7 +16,7 @@
     </div>
   </div>
   <div class="form__group" id="two">
-    <input formControlName="email" type="password" placeholder="Enter Your Email" class="form__input">
+    <input formControlName="email" type="email" placeholder="Enter Your Email" class="form__input">
 
     <div class="form__alert" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
       The Email Is Required
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="form__group">
-      <input formControlName="email" type="password" placeholder="Enter Your Email" class="form__input">
+      <input formControlName="email" type="email" placeholder="Enter Your Email" class="form__input">
 
       <div class="form__alert" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
         The Email Is Required

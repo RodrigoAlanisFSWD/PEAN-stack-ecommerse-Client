@@ -1,4 +1,4 @@
-<form class="form" [formGroup]="form">
+<form class="form" [formGroup]="form" (submit)="submit(form.value)">
     <h2 class="form__title">
         LogIn Form
     </h2>
@@ -23,9 +23,12 @@
         </div>
     </div>
 
-    <button class="form__btn" type="submit">
+    <button class="form__btn" type="submit" [disabled]="!form.valid">
         LogIn
     </button>
+    <div class="form__alert" *ngIf="error">
+      Enter An Existing Email And A Valid Password
+    </div>
 
     <a routerLink="../register" class="form__link">
         Or You Dont Have An Account ?
