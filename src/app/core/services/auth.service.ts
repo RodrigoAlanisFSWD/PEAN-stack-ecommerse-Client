@@ -34,7 +34,7 @@ export class AuthService {
 
     for(var i=0;i < ca.length;i++) {
       if (ca[i].split("=")[0] == name) {
-        return ca[i].split("=")[0]
+        return ca[i].split("=")[1]
       }
     }
 

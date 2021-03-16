@@ -4,8 +4,8 @@
             Ecommerse
         </a>
         <ul class="hero__navbar-list">
-            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Home</a></li>
-            <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Products</a></li>
+          <li class="hero__navbar-item"><a routerLink="/" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Home</a></li>
+          <li class="hero__navbar-item"><a routerLink="/products" href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Products</a></li>
             <li class="hero__navbar-item"><a href="#" class="hero__navbar-link" *ngIf="_auth.verifyToken()">Account</a></li>
         </ul>
         <a *ngIf="!_auth.verifyToken()" routerLink="login" class="hero__navbar-btn">

@@ -1,0 +1,25 @@
+<div class="products" *ngIf="products.length != 0">
+  <form class="products__search">
+    <input type="text" class="products__search-input" placeholder="Enter The Name Of The Product">
+    <button class="products__search-btn" type="submit">
+      Search
+    </button>
+  </form>
+  <div class="products__product" *ngFor="let product of products">
+    <h3 class="products__product-name">
+      {{ product.name }}
+    </h3>
+    <h4 class="products__product-category">
+      Category: {{ product.category.name }}
+    </h4>
+    <p class="products__product-count">
+      Count: {{ product.count }}
+    </p>
+    <p class="products__product-price">
+      Price: ${{ product.price | money }}
+    </p>
+    <a href="" class="products__product-btn">
+      Add To The Car
+    </a>
+  </div>
+</div>
