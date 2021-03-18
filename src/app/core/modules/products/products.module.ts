@@ -8,6 +8,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../../interceptors/TokenInterceptor';
 import { ProductsComponent } from '../../../products/products.component';
 import { MoneyPipe } from '../../pipes/money.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CategoryService } from '../../services/category.service';
 
 
 @NgModule({
@@ -19,10 +21,13 @@ import { MoneyPipe } from '../../pipes/money.pipe';
     CommonModule,
     ProductsRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     AuthService,
     ProductService,
+    CategoryService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

@@ -13,7 +13,6 @@ export class TokenInterceptor implements HttpInterceptor {
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const token: string = this._auth.readCookie("token");
-    console.log(token);
     const newReq = req.clone({
       setHeaders: {
         "x-access-token": token

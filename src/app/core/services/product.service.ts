@@ -16,4 +16,8 @@ export class ProductService {
   getAll(): Observable<baseResponse> {
     return this._http.get<baseResponse>(api_url + "product/getAll");
   }
+
+  search(txt: string): Observable<baseResponse> {
+    return this._http.get<baseResponse>(api_url + "product/search/" + txt);
+  }
 }

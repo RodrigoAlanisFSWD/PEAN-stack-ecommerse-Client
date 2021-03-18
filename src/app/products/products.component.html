@@ -1,10 +1,19 @@
-<div class="products" *ngIf="products.length != 0">
-  <form class="products__search">
-    <input type="text" class="products__search-input" placeholder="Enter The Name Of The Product">
-    <button class="products__search-btn" type="submit">
+<div class="products" *ngIf="products">
+  <form class="products__search" [formGroup]="form" (submit)="submit(form.value?.search)">
+    <input formControlName="search" type="text" class="products__search-input" placeholder="Enter Your Search">
+    <button [disabled]="!form.valid" class="products__search-btn" type="submit">
       Search
     </button>
   </form>
+  <div class="products__options" (click)="init()">
+    <button class="products__option">
+      Show All
+    </button>
+    <select id="select" (change)="filter($event)" class="products__option products__option--select">
+      <option disabled selected>Selec A Category To Filter</option>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  </div>
   <div class="products__product" *ngFor="let product of products">
     <h3 class="products__product-name">
       {{ product.name }}
